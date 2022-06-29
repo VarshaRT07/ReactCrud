@@ -1,10 +1,8 @@
 .featured{
     padding: 5px;
     flex:2;
-    -webkit-box-shadow: 2px 3px 13px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 3px 13px -9px rgba(0,0,0,0.75);
-    box-shadow: 2px 4px 13px -6px rgba(0,0,0,0.75);
-
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
 
 
     .top{
@@ -14,4 +12,66 @@
         color: rgb(121, 115, 115);
         font-size: 10px;
     }
+
+   
+    .bottom{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    .title{
+        font-size: 17px;
+        font-weight: bolder;
+        color: rgb(46, 164, 201);
+
+    }
+    .amount{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .desc{
+        font-weight: bold;
+        text-align: center;
+    }
+    .featuredChart{
+            width: 130px;
+            
+        }
+        .summary{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .item{
+                text-align: center;
+                margin:10px;
+                .itemTitle{
+                    font-size: 15px;
+                    color:rgb(150, 148, 148);
+                    font-weight: bold;
+                    padding-left: 10px;
+                    
+                }
+                .itemResult{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    &.positive{
+                        color: green;
+                    }
+                    &.negative{
+                        color: rgb(202, 26, 26);
+                    }
+                }
+            }
+        }
+    }
+    
 }

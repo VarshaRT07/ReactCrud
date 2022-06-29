@@ -1,0 +1,32 @@
+.table{
+    display: flex;
+    align-items: center;
+    
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    .tableCell{
+       align-items: center;
+      
+       padding: 12px;
+    }
+    .tableHead .tableCell{
+      font-size: 15px;
+      color:rgb(146, 24, 170);
+      font-weight: bold;
+    }
+    
+    .status{
+        padding: 5px;
+        border-radius:5px;
+        font-weight: bold;
+
+        &.Approved{
+            color:green;
+            background-color:#B4E197;
+        }
+        &.Pending{
+            color:#FAC200;
+            background-color:#F1F0C0;
+        }
+    }
+}

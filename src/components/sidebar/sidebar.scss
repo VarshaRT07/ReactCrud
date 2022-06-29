@@ -6,7 +6,7 @@
     min-height: 100vh;
 
     .top{
-        height: 50px;
+        height: 49px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -16,10 +16,7 @@
             font-size: 20px;
         }
     }
-    hr{
-        height: 0px;
-        border:0.5px solid rgba(225, 228, 228);
-    }
+   
     .center{
         padding-left: 20px;
     
@@ -43,7 +40,9 @@
             cursor: pointer;
 
             &:hover{
-                background-color:rgb(236, 192, 236);
+                background-color:rgb(245, 205, 245);
+                span{
+                    color:purple;}
             }
             .icon{
                 font-size: 18px;
@@ -62,7 +61,7 @@
 .bottom{
     display: flex;
     align-items: center;
-    margin:20px;
+    margin:10px;
 
     .colorOptions{
         width: 20px;
@@ -75,7 +74,7 @@
         &:nth-child(1){
             background-color:whitesmoke;
         }
-        &:nth-child(1){
+        &:nth-child(2){
             background-color:black;
         }
        
