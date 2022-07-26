@@ -1,11 +1,11 @@
-import './login.scss'
+import './../login/login.scss'
 import {useState} from 'react';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import {signup} from '../signup/Signup'
+ import {login} from '../login/Login'
 // import {AuthContext} from "../../context/AuthContext"
-const Login = () => {
+const Signup = () => {
 
   
   const [error, setError] = useState(false);
@@ -16,30 +16,37 @@ const Login = () => {
 
   // const {dispatch} = useContext(AuthContext)
 
-  const handleLogin = (e) => {
+  const handlesignup = (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // dispatch({type:"LOGIN", payload:user})
-        
-        navigate("/home")
       
+        const user = userCredential.user;
+        // dispatch({type:"signup", payload:user})
+        
+        navigate("/")
       })
       .catch((error) => {
-        setError(true);
+       // setError(true);
       });
   };
 
   return (
     <div className="container">
-    <form onSubmit={handleLogin}>
-     <h1>LOGIN</h1>
+    <form onSubmit={handlesignup}>
+     <h1>Signup</h1>
      <div className="ui divider"></div>
      <div className="ui flex">
-
+       <div className="field">
+         <label>Username</label>
+         <input type="text"
+          name="username"
+           placeholder="Username"
+           
+          
+         />
+       </div>
        <div className="field">
          <label>Email</label>
          <input type="email"
@@ -58,11 +65,11 @@ const Login = () => {
            />
        </div>
        <button className="ui fluid button blue">Submit</button>
-       <p className="log">Don't have an account <a href="signup">Signup</a></p>
-       {error && <h5>Wrong username or password</h5>}
+       <p className="log">Already have an account <a href="login">Login</a></p>
+       {/* {error && <h5>Wrong username or password</h5>} */}
      </div>
     </form></div>
   )
 }
 
-export default Login
+export default Signup
