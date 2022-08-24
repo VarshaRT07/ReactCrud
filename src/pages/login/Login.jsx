@@ -1,10 +1,10 @@
 import './login.scss'
-import {useState} from 'react';
+import {useState,useContext} from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import {signup} from '../signup/Signup'
-// import {AuthContext} from "../../context/AuthContext"
+import {AuthContext} from "../../context/AuthContext"
 const Login = () => {
 
   
@@ -14,7 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  // const {dispatch} = useContext(AuthContext)
+  const {dispatch} = useContext(AuthContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,9 +23,9 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // dispatch({type:"LOGIN", payload:user})
+        dispatch({type:"LOGIN", payload:user})
         
-        navigate("/home")
+        navigate("/")
       
       })
       .catch((error) => {
@@ -45,7 +45,7 @@ const Login = () => {
          <input type="email"
           name="email"
            placeholder="email"
-           onChange={(e) => setEmail(e.target.value)}
+           onChange={e => setEmail(e.target.value)}
           
            />
        </div>
@@ -54,7 +54,7 @@ const Login = () => {
          <input type="password"
           name="password"
            placeholder="password"
-           onChange={(e) => setPassword(e.target.value)}
+           onChange={e => setPassword(e.target.value)}
            />
        </div>
        <button className="ui fluid button blue">Submit</button>
